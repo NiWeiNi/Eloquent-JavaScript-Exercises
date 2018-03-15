@@ -9,3 +9,11 @@ function range(start, end, step) {
     } }
     return range;
 }
+
+function sum(array) {
+    let sum = 0;
+    for(let element of array) {
+        sum += element;
+    }
+    return sum;
+} 
