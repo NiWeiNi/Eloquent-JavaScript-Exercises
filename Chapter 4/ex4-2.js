@@ -1,8 +1,7 @@
 function reverseArray(array) {
-    let tempValue, j = array.length-1, newArray = [];
+    let newArray = [];
     for (let i = 0; i < array.length; i++) {
-        newArray[j] = array[i] ;
-        j -= 1; 
+        newArray.unshift(array[i]);
     }
     return newArray;
 }   
