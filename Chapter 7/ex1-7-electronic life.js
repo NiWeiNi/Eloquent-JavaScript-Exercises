@@ -1,3 +1,5 @@
+"use strict"
+
 // Plan view
 var plan = ["############################",
             "#      #    #      o      ##",
@@ -108,8 +110,7 @@ World.prototype.toString = function() {
     return output;
 };
 
-function Wall () {}
+function Wall() {}
 
-var world = new World ( plan , {"#": Wall ,
-"o ": BouncingCritter }) ;
-console . log ( world . toString () ) ;
+var world = new World(plan, {"#": Wall, "o": BouncingCritter});
+console.log(world.toString());
