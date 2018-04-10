@@ -53,3 +53,39 @@ let first = new VillageState(
     [{place: "Post Office", address: "Alice's House"}]
 );
 let next = first.move("Alice's House");
+
+// Define robot with memory
+function runRobot(state, robot, memory) {
+    for (let turn = 0;; turn++) {
+        if (state.parcels.length == 0) {
+            console.log(`Done in ${turn} turns`);
+            break;
+        }
+        let action = robot(state, memory);
+        state = state.move(action.direction);
+        memory = action.memory;
+        console.log(`Moved to ${action.direction}`);
+    }
+}
+
+// Random delivery and pickup
+function randomPick(array) {
+    let choice = Math.floor(Math.random() * array.length);
+}
+
+function randomRobot(state) {
+    return {direction: randomPick(roadGraph[state.place])};
+}
+
+// Add static method into the VillageState constructor
+VillageState.random = function(parcelCount = 5) {
+    let parcels = [];
+    for (let i = 0; i < parcelCount; i++) {
+        let address = randomPick(Object.keys(roadGraph));
+        let place;
+        do {
+            place = randomPick(Object.keys(roadGraph));
+        } while (place == address);
+        parcels.push
+    }
+}
