@@ -12,4 +12,16 @@ class Group {
     delete(element) {
         this.arraySet = this.arraySet.filter(el => el !== element);
     }
+    // Check if it has the specified element
+    has(element) {
+        return this.arraySet.includes(element);
+    }
+    // Method that creates a group from an iterable object
+    static from (iterableObject) {
+        let group = new Group;
+        for (let item of iterableObject) {
+            group.add(item);
+        }
+        return group;
+    }
 }
